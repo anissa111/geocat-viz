@@ -783,8 +783,7 @@ def set_vector_density(data, minDistance=0):
         return ds
 
 
-def set_tick_orientation(ax,
-                         orientation):
+def set_tick_orientation(ax, orientation):
     """
     Utility function to make plots look like NCL plots by letting the user change the orientation of axes tick marks
 
@@ -806,4 +805,5 @@ def set_tick_orientation(ax,
         ax.yaxis.set_tick_params(direction='out')
     else:
         warnings.warn(
-            'Invalid input for orientation given. Valid inputs are "inside" or "outside"')
+            'Invalid input for orientation given. Valid inputs are "inside" or "outside"'
+        )
