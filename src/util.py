@@ -781,3 +781,29 @@ def set_vector_density(data, minDistance=0):
                        lon=slice(None, None, lon_every))
 
         return ds
+
+
+def set_tick_orientation(ax,
+                         orientation):
+    """
+    Utility function to make plots look like NCL plots by letting the user change the orientation of axes tick marks
+
+    Args:
+
+        ax (:class:`matplotlib.axes._subplots.AxesSubplot` or :class:`cartopy.mpl.geoaxes.GeoAxesSubplot`):
+            Current axes to the current figure
+
+        orientation (:class:'str):
+            Should be either "inside" or "outside" corresponding to the desired  orientation of tick marks
+    """
+    import warnings
+
+    if orientation is 'inside':
+        ax.xaxis.set_tick_params(direction='in')
+        ax.yaxis.set_tick_params(direction='in')
+    elif orientation is 'outside':
+        ax.xaxis.set_tick_params(direction='out')
+        ax.yaxis.set_tick_params(direction='out')
+    else:
+        warnings.warn(
+            'Invalid input for orientation given. Valid inputs are "inside" or "outside"')
